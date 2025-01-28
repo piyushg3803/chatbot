@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+::-webkit-scrollbar{
+  width: 8px;
+  background-color: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #1f1e1e
+}
+
+::-webkit-scrollbar:horizontal{
+  display: none;
+}
