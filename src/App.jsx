@@ -51,7 +51,7 @@ function App() {
   }
 
   return (
-    <div className="bg-[#1a1a1a] w-full min-h-screen">
+    <div className="bg-[#0c0c0c] w-full min-h-screen">
       <h1 className="text-4xl text-white text-center p-4">Chat With AI</h1>
       <div className="h-[83vh] overflow-scroll">
         {chatHistory.map((message, index) => (
