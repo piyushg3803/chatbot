@@ -26,11 +26,9 @@ function App() {
   };
 
   const api_key = import.meta.env.VITE_API_KEY;
-  
 
   async function generateAnswer() {
-   
-      setResponse("Thinking...");
+    setResponse("Thinking...");
 
     const response = await axios({
       url: `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${api_key}`,
@@ -43,16 +41,21 @@ function App() {
         ],
       },
     });
-    
+
     setResponse(
       response["data"]["candidates"][0]["content"]["parts"][0]["text"] ||
-      "There is no response from the server"
+        "There is no response from the server"
     );
   }
 
   return (
-    <div className="bg-[#0c0c0c] w-full min-h-screen">
-      <h1 className="text-4xl text-white text-center p-4">Chat With AI</h1>
+    <div className="bg-[#0c0c0c] w-full min-h-screen pt-4">
+      <div className="bg-[#505bbdb2] w-fit px-4 m-auto rounded-full flex justify-center items-center mb-6">
+        <h1 className="text-4xl text-white text-center p-4">
+          Chat With AI
+        </h1>
+        <img className="w-10" src="/public/ai.png" alt="" />
+      </div>
       <div className="h-[83vh] overflow-scroll">
         {chatHistory.map((message, index) => (
           <div
@@ -61,10 +64,10 @@ function App() {
               index === 0 ? "hidden" : ""
             }`}
           >
-            <div className="text-white ms-auto bg-[#3d3d3d] text-left text-lg px-6 p-4 rounded-3xl">
+            <div className="text-white ms-auto bg-[#505bbdb2] text-left text-lg px-6 p-4 rounded-3xl">
               <p>{message.user}</p>
             </div>
-            <div className="text-white text-lg mt-5 p-4">
+            <div className="text-white text-xl mt-5 p-4">
               <ReactMarkdown remarkPlugins={remarkGfm}>
                 {message.bot}
               </ReactMarkdown>
@@ -99,10 +102,10 @@ function App() {
           </div>
         ) : (
           <div className="chat-container mt-4 mb-8 w-1/2 max-sm:w-3/4 m-auto flex flex-col">
-            <div className="text-white ms-auto bg-[#3d3d3d] text-left text-lg px-6 p-4 rounded-3xl">
+            <div className="text-white ms-auto bg-[#505bbdb2] text-left text-lg px-6 p-4 rounded-3xl">
               <p>{chatMsg}</p>
             </div>
-            <div className="text-white text-lg mt-5 p-4">
+            <div className="text-white text-xl mt-5 p-4">
               <ReactMarkdown remarkPlugins={remarkGfm}>
                 {response}
               </ReactMarkdown>
