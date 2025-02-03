@@ -54,7 +54,7 @@ function App() {
         <h1 className="text-4xl text-white text-center p-4">
           Chat With AI
         </h1>
-        <img className="w-10" src="/ai.png" alt="" />
+        <img className="w-10" src="/ai.png" alt=""/>
       </div>
       <div className="h-[83vh] overflow-scroll">
         {chatHistory.map((message, index) => (
