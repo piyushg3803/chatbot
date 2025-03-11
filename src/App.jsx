@@ -105,7 +105,7 @@ function App() {
             <div className="text-white ms-auto bg-[#505bbdb2] text-left text-lg px-6 p-4 rounded-3xl">
               <p>{chatMsg}</p>
             </div>
-            <div className="text-white text-xl mt-5 p-4">
+            <div className="text-white text-xl mt-5 p-4 mb-10">
               <ReactMarkdown remarkPlugins={remarkGfm}>
                 {response}
               </ReactMarkdown>
