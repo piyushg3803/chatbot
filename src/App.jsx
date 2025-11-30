@@ -124,7 +124,7 @@ function App() {
   return (
     <div className="bg-[#0c0c0c] w-full min-h-screen pt-4">
       {/* HEADER */}
-      <div className="border-2 bg-[#3d3d3d] w-fit px-3 m-auto rounded-3xl flex justify-center items-center mb-6">
+      <div className="bg-[#3d3d3d] w-fit px-3 m-auto rounded-3xl flex justify-center items-center mb-6">
         <h1 className="text-4xl text-white text-center p-3">Chat With AI</h1>
         <img className="w-10" src="/ai.png" alt="" />
       </div>
