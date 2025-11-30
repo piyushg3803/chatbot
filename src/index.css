@@ -13,11 +13,58 @@
   display: none;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap');
 
 
 @layer base{
     html{
-      font-family: "Nunito", serif;
+      font-family: "Google Sans Flex", sans-serif;
     }
+}
+
+/* slide-in for newly added messages */
+.message-enter {
+  animation: slideInRight 360ms cubic-bezier(.22,.9,.19,1);
+}
+
+/* fade in for images/preview */
+.fade-in {
+  animation: fadeIn 320ms ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* simple loading skeleton for bot "Thinking..." */
+.loading-bot {
+  
+  animation: pulse 1.2s linear infinite;
+}
+
+@keyframes pulse {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
